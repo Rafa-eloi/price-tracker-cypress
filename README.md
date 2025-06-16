@@ -24,10 +24,10 @@ Este projeto tem como objetivo automatizar a busca de produtos em sites de e-com
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/Rafa-eloi/price-tracker-cypress.git
 
 # Acesse o diretório do projeto
-cd seu-repositorio
+cd price-tracker-cypress
 
 # Instale as dependências
 npm install
