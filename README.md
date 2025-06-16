@@ -37,3 +37,9 @@ npx cypress run
 
 # Ou execute os testes com interface
 npx cypress open
+```
+
+## 📌 Observações
+O projeto está em desenvolvimento e pode ser adaptado para diferentes sites de e-commerce.
+
+Ideal para fins educacionais, estudos de QA e prática com automação de testes.
