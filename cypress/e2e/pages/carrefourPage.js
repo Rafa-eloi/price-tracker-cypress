@@ -53,6 +53,10 @@ export class CarrefourPage {
             data: produtos
         });
         console.table(produtos);
+        cy.task('salvarProdutosNoBanco', {
+            origem: 'Carrefour',
+            data: produtos
+        });
     });
   }
     

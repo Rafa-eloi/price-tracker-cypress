@@ -4,6 +4,9 @@ const { createEsbuildPlugin } = require("@badeball/cypress-cucumber-preprocessor
 const addCucumberPreprocessorPlugin = require("@badeball/cypress-cucumber-preprocessor").addCucumberPreprocessorPlugin;
 const path = require("path");
 
+// Importa a função que salva no banco
+const { salvarProdutos } = require("./db");
+
 module.exports = defineConfig({
   viewportWidth: 1440,
   viewportHeight: 900,
@@ -12,7 +15,6 @@ module.exports = defineConfig({
   requestTimeout: 10000,
   responseTimeout: 30000,
   e2e: {
-    //baseUrl: "https://www.americanas.com.br/",
     userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
     specPattern: "cypress/e2e/features/**/*.feature",
 
@@ -27,16 +29,28 @@ module.exports = defineConfig({
         })
       );
 
-      on('task', {
+      // Consolidando as duas tasks em um único bloco
+      on("task", {
         logProdutos({ origem, data }) {
-          console.log(`\n Lista de produtos - ${origem}:`);
+          console.log(`\n🧾 Lista de produtos - ${origem}:`);
           console.table(data);
           return null;
-        }
+        },
+
+        salvarProdutosNoBanco({ origem, data }) {
+          return salvarProdutos(origem, data)
+            .then(() => {
+              console.log(`🛢️ Dados salvos no MySQL (${origem})`);
+              return null;
+            })
+            .catch((err) => {
+              console.error("❌ Erro ao salvar no banco:", err);
+              throw err;
+            });
+        },
       });
 
       return config;
     },
   },
 });
-
