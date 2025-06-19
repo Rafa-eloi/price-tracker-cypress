@@ -53,10 +53,12 @@ export class CarrefourPage {
             data: produtos
         });
         console.table(produtos);
-        cy.task('salvarProdutosNoBanco', {
-            origem: 'Carrefour',
-            data: produtos
-        });
+        if (Cypress.env('gravarNoBanco')) {
+            cy.task('salvarProdutosNoBanco', {
+              origem: 'Carrefour',
+              data: produtos
+            });
+        }
     });
   }
     

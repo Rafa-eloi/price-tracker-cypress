@@ -87,10 +87,12 @@ export class AmericanasPage {
             data: produtosCaros
         });
         console.table(produtosCaros);
-        cy.task('salvarProdutosNoBanco', {
-            origem: 'Americanas',
-            data: produtosCaros
-        });
+        if (Cypress.env('gravarNoBanco')) {
+            cy.task('salvarProdutosNoBanco', {
+              origem: 'Americanas',
+              data: produtosCaros
+            });
+        }
       });
     });
   }

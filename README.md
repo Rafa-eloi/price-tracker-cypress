@@ -38,8 +38,15 @@ npm install
 # Execute os testes em modo headless
 npx cypress run
 
+# Execute os testes em modo headless com a variável de salvar no banco ativada (caso tenha o banco salvo localmente)
+npx cypress run --env gravarNoBanco=true
+
 # Ou execute os testes com interface
 npx cypress open
+
+# Execute os testes em modo headless com a variável de salvar no banco ativada (caso tenha o banco salvo localmente)
+npx cypress open --env gravarNoBanco=true
+
 ```
 
 ## 📌 Observações
