@@ -15,5 +15,8 @@
     "cypress": "^14.4.1",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "esbuild": "^0.25.5"
+  },
+  "dependencies": {
+    "mysql2": "^3.14.1"
   }
 }
