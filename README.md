@@ -2,9 +2,8 @@
 
 ![GitHub Workflow Status](https://github.com/Rafa-eloi/price-tracker-cypress/actions/workflows/cypress.yml/badge.svg)
 
-# 🛒 Automação de Comparação de Preços com Cypress
-
 Este projeto tem como objetivo automatizar a busca e comparação de preços de produtos em sites de e-commerce. Utilizando Cypress como framework de testes, a automação realiza buscas por produtos (ex: *Smart TV*), aplica filtros de preço e exibe no console e terminal os resultados em formato de tabela, incluindo nome, valor e (quando disponível) avaliação.
+
 
 ## ✅ Funcionalidades
 
@@ -18,6 +17,7 @@ Este projeto tem como objetivo automatizar a busca e comparação de preços de 
 - Pipeline GitHub Actions configurada para rodar testes automaticamente a cada push na `main`
 - Estrutura de testes organizada com **Page Object Model (POM)**
 
+
 ## 🧰 Tecnologias utilizadas
 
 - [Cypress](https://www.cypress.io/) — Automação de testes E2E
@@ -26,6 +26,7 @@ Este projeto tem como objetivo automatizar a busca e comparação de preços de 
 - Cucumber
 - Page Object Model
 - MySQL + MySQL Workbench
+
 
 ## 🚀 Como executar
 
@@ -53,7 +54,8 @@ npx cypress open --env gravarNoBanco=true
 
 ```
 
-🧾 Exemplo da Tabela no Terminal
+
+## 🧾 Exemplo da Tabela no Terminal
 Após a execução, os produtos filtrados são exibidos diretamente no terminal com o seguinte formato:
 ┌─────────┬─────────────────────────────────────┬──────────────┬──────────┐
 │ (index) │              Produto                │    Preço     │ Rating   │
@@ -65,7 +67,7 @@ Após a execução, os produtos filtrados são exibidos diretamente no terminal 
 A listagem pode variar de acordo com o filtro aplicado e os produtos disponíveis no momento da execução.
 
 
-🗃️ Estrutura da Tabela no Banco de Dados
+## 🗃️ Estrutura da Tabela no Banco de Dados
 Quando a variável gravarNoBanco=true está ativa, os dados são salvos em uma tabela no MySQL com a seguinte estrutura:
 ```sql
 CREATE DATABASE IF NOT EXISTS produtos_qa;
@@ -88,6 +90,7 @@ Consulta SQL sugerida:
 SELECT * FROM produtos ORDER BY data_execucao DESC;
 
 ```
+
 
 ## 📌 Observações
 O projeto está em constante evolução e pode ser facilmente adaptado para outros sites de e-commerce.
