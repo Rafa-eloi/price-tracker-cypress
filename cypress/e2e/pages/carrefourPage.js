@@ -4,7 +4,7 @@ export class CarrefourPage {
 
   // Método para fechar os cookies
   fecharBannerCookies() {
-    cy.get(carrefourElements.bannerCookies, { timeout: 50000 }).click();
+    cy.get(carrefourElements.bannerCookies, { timeout: 10000 }).click();
   }
 
   // Método para realizar a busca de um produto com o termo "Smart TV"
