@@ -12,7 +12,7 @@ module.exports = defineConfig({
   requestTimeout: 10000,
   responseTimeout: 30000,
   e2e: {
-    baseUrl: "https://www.americanas.com.br/",
+    //baseUrl: "https://www.americanas.com.br/",
     userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
     specPattern: "cypress/e2e/features/**/*.feature",
 
@@ -28,8 +28,8 @@ module.exports = defineConfig({
       );
 
       on('task', {
-        logProdutosCaros(data) {
-          console.log('\ nº Produtos com preço > R$ 3.500:');
+        logProdutos({ origem, data }) {
+          console.log(`\n Lista de produtos - ${origem}:`);
           console.table(data);
           return null;
         }

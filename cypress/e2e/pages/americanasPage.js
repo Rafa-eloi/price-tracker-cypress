@@ -82,7 +82,10 @@ export class AmericanasPage {
       }).then(() => {
         // Após listar, exibe os produtos caros no console e envia para uma task Cypress
         console.log('Produtos com preço > R$ 3.500:');
-        cy.task('logProdutosCaros', produtosCaros);
+        cy.task('logProdutos', {
+          origem: 'Americanas',
+          data: produtosCaros
+        });
         console.table(produtosCaros);
       });
     });

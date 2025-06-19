@@ -3,8 +3,8 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 const americanasPage = new AmericanasPage();
 
-Given("que o usuário acessa a página inicial", () => {
-  cy.visit('/');
+Given("que o usuário acessa a página inicial da americanas", () => {
+  cy.visit('https://www.americanas.com.br/');
 });
 
 Then("fecha os avisos da tela, se presentes", () => {
@@ -23,7 +23,3 @@ When("filtro pelo preço", () => {
 Then("listar produtos que atendem os critérios", () => {
   americanasPage.listarProdutos();
 });
-
-
-
-

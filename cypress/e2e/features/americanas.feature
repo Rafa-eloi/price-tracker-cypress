@@ -1,7 +1,7 @@
 Feature: Busca de produtos na americanas
 
   Background: Acessar a plataforma e fechar os avisos
-    Given que o usuário acessa a página inicial
+    Given que o usuário acessa a página inicial da americanas
     Then fecha os avisos da tela, se presentes
   
   @smoke
