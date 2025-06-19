@@ -57,13 +57,7 @@ npx cypress open --env gravarNoBanco=true
 
 ## 🧾 Exemplo da Tabela no Terminal
 Após a execução, os produtos filtrados são exibidos diretamente no terminal com o seguinte formato:
-┌─────────┬─────────────────────────────────────┬──────────────┬──────────┐
-│ (index) │              Produto                │    Preço     │ Rating   │
-├─────────┼─────────────────────────────────────┼──────────────┼──────────┤
-│    0    │ 'Smart TV LG 50" 4K UHD'            │ 'R$ 3.799,00'│   4.7    │
-│    1    │ 'Smart TV Samsung 55" Crystal UHD'  │ 'R$ 4.299,00'│   4.8    │
-│    2    │ 'Smart TV TCL 65" Android TV'       │ 'R$ 4.999,00'│   4.6    │
-└─────────┴─────────────────────────────────────┴──────────────┴──────────┘
+![Exemplo de saída da tabela no terminal](./assets/exemplo-de-saida-terminal.png)
 A listagem pode variar de acordo com o filtro aplicado e os produtos disponíveis no momento da execução.
 
 
@@ -90,6 +84,36 @@ Consulta SQL sugerida:
 SELECT * FROM produtos ORDER BY data_execucao DESC;
 
 ```
+
+---
+
+## 📸 Capturas de Tela (Prints)
+
+### 📦 Resultado da execução no terminal
+
+![Tabela de produtos no terminal](./assets/execucao-terminal.png)
+*Tabela gerada no terminal após a execução headless com `npx cypress run`.*
+
+---
+
+### 🧪 Execução dos testes com Cypress aberto
+
+![Execução Cypress com interface](./assets/execucao-navegador.png)
+*Interface do Cypress rodando os testes de forma visual e resultado no console do navegador.*
+
+---
+
+### 📋 Tabela vazia no banco de dados (Workbench)
+
+![Tabela vazia no Workbench](./assets/tabela-vazia.png)
+*Tabela vazia antes da execução dos testes em banco local via MySQL Workbench.*
+
+---
+
+### 📋 Resultado salvo no banco de dados (Workbench)
+
+![Tabela preenchida no Workbench](./assets/tabela-preenchida.png)
+*Tabela preenchida após execução dos testes em banco local via MySQL Workbench.*
 
 
 ## 📌 Observações
