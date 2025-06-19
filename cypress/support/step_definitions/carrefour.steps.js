@@ -4,7 +4,11 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 const carrefourPage = new CarrefourPage();
 
 Given("que o usuário acessa a página inicial do carrefour", () => {
-  cy.visit('https://www.carrefour.com.br/');
+  cy.visit('https://www.carrefour.com.br/', {
+      headers: {
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
+      }
+  });
 });
 
 Then("fecho os cookies", () => {
