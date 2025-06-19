@@ -1,0 +1,41 @@
+name: Cypress + Cucumber Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  run-e2e-tests:
+    name: Cypress Tests with Cucumber
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Clonar repositório
+        uses: actions/checkout@v3
+
+      - name: 🧰 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: 📦 Instalar dependências
+        run: npm install
+
+      - name: ✅ Rodar testes Cypress + Cucumber
+        run: npx cypress run
+
+      - name: 📸 Salvar screenshots (se houver falhas)
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: screenshots
+          path: cypress/screenshots
+
+      - name: 🎥 Salvar vídeos dos testes
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: videos
+          path: cypress/videos
