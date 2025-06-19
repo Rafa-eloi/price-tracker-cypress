@@ -91,14 +91,14 @@ SELECT * FROM produtos ORDER BY data_execucao DESC;
 
 ### 📦 Resultado da execução no terminal
 
-![Tabela de produtos no terminal](./assets/execucao-terminal.png)
+![Tabela de produtos no terminal](./assets/terminal.png)
 *Tabela gerada no terminal após a execução headless com `npx cypress run`.*
 
 ---
 
 ### 🧪 Execução dos testes com Cypress aberto
 
-![Execução Cypress com interface](./assets/execucao-navegador.png)
+![Execução Cypress com interface](./assets/cypress-ui.png)
 *Interface do Cypress rodando os testes de forma visual e resultado no console do navegador.*
 
 ---
