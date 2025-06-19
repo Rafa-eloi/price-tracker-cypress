@@ -4,12 +4,13 @@ Este projeto tem como objetivo automatizar a busca de produtos em sites de e-com
 
 ## ✅ Funcionalidades
 
-- Acessa automaticamente o site de e-commerce.
+- Acessa automaticamente o site de e-commerce (até o momento Americanas e Carrefour).
 - Fecha os pop-ups de promoções e cookies quando necessários.
 - Realiza a busca por um produto específico.
 - Aplica filtros de preço.
 - Coleta os nomes, preços e avaliações dos produtos listados.
 - Exibe os dados coletados em formato de tabela no console.
+- Salva os dados coletados em uma tabela no banco de dados.
 - Estrutura de testes organizada com **Page Object Model (POM)**.
 
 ## 🧰 Tecnologias utilizadas
@@ -19,6 +20,8 @@ Este projeto tem como objetivo automatizar a busca de produtos em sites de e-com
 - Node.js
 - Cucumber
 - Page Object Model
+- MySQL
+- Workbench
 
 ## 🚀 Como executar
 
