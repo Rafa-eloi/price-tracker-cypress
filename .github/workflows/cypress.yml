@@ -13,10 +13,10 @@ jobs:
 
     steps:
       - name: ⬇️ Clonar repositório
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 🧰 Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
@@ -28,14 +28,14 @@ jobs:
 
       - name: 📸 Salvar screenshots (se houver falhas)
         if: failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: screenshots
           path: cypress/screenshots
 
       - name: 🎥 Salvar vídeos dos testes
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: videos
           path: cypress/videos
