@@ -4,8 +4,6 @@ const { createEsbuildPlugin } = require("@badeball/cypress-cucumber-preprocessor
 const addCucumberPreprocessorPlugin = require("@badeball/cypress-cucumber-preprocessor").addCucumberPreprocessorPlugin;
 const path = require("path");
 
-// Importa a função que salva no banco
-const { salvarProdutos } = require("./db");
 
 module.exports = defineConfig({
   viewportWidth: 1440,
@@ -38,6 +36,8 @@ module.exports = defineConfig({
         },
 
         salvarProdutosNoBanco({ origem, data }) {
+          // Importa a função que salva no banco
+          const { salvarProdutos } = require("./db");
           return salvarProdutos(origem, data)
             .then(() => {
               console.log(`🛢️ Dados salvos no MySQL (${origem})`);
