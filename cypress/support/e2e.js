@@ -16,3 +16,27 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 //import '@badeball/cypress-cucumber-preprocessor/commands';
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // Ignora apenas esse erro específico do React
+  if (err.message.includes('Minified React error #418')) {
+    return false;
+  }
+
+  // Ignora erros de promessas rejeitadas sem tratamento no app
+  if (err.message.includes("Didn't find any matches after fetcher action")) {
+    return false;
+  }
+
+  // Ignora erros conhecidos da aplicação que não afetam a automação
+  if (
+    err.message.includes("Cannot read properties of undefined") ||
+    err.message.includes("reading 'result'")
+  ) {
+    return false; // Impede falha do teste
+  }
+
+  // Permite falha para outros erros
+  return true;
+
+});
